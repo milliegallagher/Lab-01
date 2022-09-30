@@ -456,11 +456,12 @@ here.</em></p>
 <h3>Exercise 8</h3>
 <p><em>Remove this text, and add your answer for Exercise 8
 here.</em></p>
-<pre class="r"><code>plastic_waste_edit &lt;- plastic_waste %&gt;% 
-  mutate(coastal_pop_prop = coastal_pop / total_pop) %&gt;%
-  filter(plastic_waste_per_cap &lt; 3)
-
-# remove this comment and add the code for Exercise 8 here</code></pre>
+<p>plastic_waste_edit &lt;- plastic_waste %&gt;% mutate(coastal_pop_prop
+= coastal_pop / total_pop) %&gt;% filter(plastic_waste_per_cap &lt; 3)+
+ggplot(data = plastic_waste, mapping = aes(x = plastic_waste_per_cap, y
+= coastal_pop,colour=continent)) + geom_point(color=continent)+
+geom_smooth(method=lm)</p>
+<p>```</p>
 </div>
 
 

@@ -104,11 +104,16 @@ ggplot(data = plastic_waste,
 
 *Remove this text, and add your answer for Exercise 8 here.*
 
-```{r recreate-viz}
 plastic_waste_edit <- plastic_waste %>% 
   mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
-  filter(plastic_waste_per_cap < 3)
+  filter(plastic_waste_per_cap < 3)+
+  ggplot(data = plastic_waste, 
+       mapping = aes(x = plastic_waste_per_cap, 
+                     y = coastal_pop,colour=continent)) +
+  geom_point(color=continent)+
+  geom_smooth(method=lm)
+  
 
-# remove this comment and add the code for Exercise 8 here
+
 ```
 
